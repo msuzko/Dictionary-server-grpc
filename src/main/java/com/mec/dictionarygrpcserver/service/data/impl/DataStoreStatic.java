@@ -1,13 +1,15 @@
 package com.mec.dictionarygrpcserver.service.data.impl;
 
 import com.mec.dictionarygrpcserver.service.data.DataStore;
-import org.springframework.stereotype.Component;
+import org.springframework.context.annotation.Profile;
+import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.util.Map;
 
 
-@Component
+@Service
+@Profile("dev")
 public class DataStoreStatic implements DataStore {
     public static final Map<String, BigDecimal> tickers = Map.of(
             "MSFT", new BigDecimal("332.68"),

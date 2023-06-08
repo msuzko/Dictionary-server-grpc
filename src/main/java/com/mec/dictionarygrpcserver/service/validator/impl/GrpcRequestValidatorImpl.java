@@ -21,7 +21,7 @@ public class GrpcRequestValidatorImpl implements GrpcRequestValidator {
 
     private Throwable getEmptyFieldThrowable(String fieldName) {
         return Status.INVALID_ARGUMENT
-                .withDescription(String.format("%s mast be filled", fieldName))
+                .withDescription(String.format("%s must be filled", fieldName))
                 .asException();
     }
 }

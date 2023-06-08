@@ -3,6 +3,7 @@ package com.mec.dictionarygrpcserver.service.grpc.server;
 import com.google.rpc.Code;
 import com.google.rpc.Status;
 import com.mec.dictionarygrpcserver.exception.GrpcIllegalArgumentException;
+import com.mec.dictionarygrpcserver.exception.TickerNotFoundException;
 import com.mec.dictionarygrpcserver.service.DictionaryService;
 import com.mec.dictionarygrpcserver.service.validator.GrpcRequestValidator;
 import com.mec.proto.dictionary.DictionaryServiceGrpc;
@@ -43,6 +44,9 @@ public class GrpcService extends DictionaryServiceGrpc.DictionaryServiceImplBase
             streamObserver.onNext(value);
             streamObserver.onCompleted();
         } catch (GrpcIllegalArgumentException e) {
+            log.error(e.getLocalizedMessage());
+            streamObserver.onError(e.getThrowable());
+        } catch (TickerNotFoundException e) {
             log.error(e.getLocalizedMessage());
             streamObserver.onError(e.getThrowable());
         } catch (Exception e) {

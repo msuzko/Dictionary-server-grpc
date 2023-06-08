@@ -18,7 +18,7 @@ public class DictionaryServiceImpl implements DictionaryService {
     @Override
     public BigDecimal getPrice(String ticker) {
         var tickers = dataStore.getTickers();
-        if (tickers.containsKey(ticker)) {
+        if (!tickers.containsKey(ticker)) {
             throw new TickerNotFoundException(Status.NOT_FOUND
                     .withDescription(String.format("Ticker %s isn't found", ticker))
                     .asException());
