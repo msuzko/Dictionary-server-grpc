@@ -11,7 +11,7 @@ import java.util.Map;
 @Service
 @Profile("dev")
 public class DataStoreStatic implements DataStore {
-    public static final Map<String, BigDecimal> tickers = Map.of(
+    private static final Map<String, BigDecimal> tickers = Map.of(
             "MSFT", new BigDecimal("332.68"),
             "AA", new BigDecimal("34.55"),
             "MU", new BigDecimal("67.54"),

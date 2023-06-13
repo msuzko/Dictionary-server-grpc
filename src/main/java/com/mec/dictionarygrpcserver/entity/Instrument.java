@@ -15,4 +15,11 @@ public class Instrument {
     private String ticker;
     private BigDecimal price;
 
+    public Instrument() {
+    }
+
+    public Instrument(String ticker, BigDecimal price) {
+        this.ticker = ticker;
+        this.price = price;
+    }
 }
