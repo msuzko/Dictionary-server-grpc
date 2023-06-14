@@ -1,0 +1,22 @@
+spring:
+  devtools:
+    add-properties: false
+  jpa:
+    show-sql: true
+  #    properties:
+  #      hibernate:
+  #        dialect: org.hibernate.dialect.PostgreSQL95Dialect
+  #        temp:
+  #          use_jdbc_metadata_defaults: false
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/postgres?currentSchema=dictionary
+    username: admin
+    password: root
+  liquibase:
+    enabled: true
+    default-schema: dictionary
+    change-log: classpath:db/changelog/changelog.yaml
+
+grpc:
+  port: 10001

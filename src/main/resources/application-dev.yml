@@ -1,0 +1,6 @@
+spring:
+  devtools:
+    add-properties: true
+
+grpc:
+  port: 10001
