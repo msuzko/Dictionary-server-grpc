@@ -20,3 +20,11 @@ spring:
 
 grpc:
   port: 10001
+
+endpoint:
+  prefix: /dictionary_server/v1
+  method:
+    instrument: /instrument
+
+server:
+  port: 8082
