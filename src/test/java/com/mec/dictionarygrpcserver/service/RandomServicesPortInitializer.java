@@ -10,6 +10,6 @@ public class RandomServicesPortInitializer implements ApplicationContextInitiali
     @Override
     public void initialize(@NonNull ConfigurableApplicationContext applicationContext) {
         TestPropertySourceUtils.addInlinedPropertiesToEnvironment(applicationContext,
-                "grpc.server.free.port" + TestSocketUtils.findAvailableTcpPort());
+                "grpc.server.free.port=" + TestSocketUtils.findAvailableTcpPort());
     }
 }

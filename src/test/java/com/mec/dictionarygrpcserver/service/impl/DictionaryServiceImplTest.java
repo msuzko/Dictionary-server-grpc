@@ -53,6 +53,6 @@ class DictionaryServiceImplTest {
         var exception = assertThrows(TickerNotFoundException.class, () -> dictionaryService.getPrice("AAPL"));
 
         verify(dataStore).getTickers();
-        assertThat(exception.getMessage()).isEqualTo("NOT_FOUND: Ticker AAPL isn't found");
+        assertThat(exception.getMessage()).isEqualTo("NOT_FOUND: Ticker 'AAPL' not found");
     }
 }
